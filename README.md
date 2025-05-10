@@ -14,7 +14,7 @@ http://localhost:8888/
 able to re-run install on existing instance<br/>
 use more `custom` ports to avoid conflicts with other apps<br/>
 <br/>
-fix this:<br/>
+fix this (error on `vagrant provision`):<br/>
 May 10 10:22:47 vagrant systemd[1]: php8.4-fpm.service: Start request repeated too quickly.<br/>
 May 10 10:22:47 vagrant systemd[1]: php8.4-fpm.service: Failed with result 'exit-code'.<br/>
 May 10 10:22:47 vagrant systemd[1]: Failed to start php8.4-fpm.service - The PHP 8.4 FastCGI Process Manager.<br/>
