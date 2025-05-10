@@ -14,5 +14,5 @@ ls -al $INSTALL_DIR;
 
 git clone https://github.com/alexstanciu-1/dp-vm "$INSTALL_DIR/vm"
 
+cd "$INSTALL_DIR/vm/vagrant" && vagrant provision
 cd "$INSTALL_DIR/vm/vagrant" && vagrant up
-
