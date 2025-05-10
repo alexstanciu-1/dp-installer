@@ -9,3 +9,6 @@ descriptive programing installer
 
 If the installation was ok you should be able to access:<br/>
 http://localhost:8888/
+
+# todo
+able to re-run install on existing instance
