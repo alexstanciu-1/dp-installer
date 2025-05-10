@@ -12,3 +12,4 @@ http://localhost:8888/
 
 # todo
 able to re-run install on existing instance
+use more `custom` ports to avoid conflicts with other apps
