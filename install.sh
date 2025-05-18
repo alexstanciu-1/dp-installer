@@ -21,4 +21,5 @@ git clone https://github.com/alexstanciu-1/descriptivejs "$INSTALL_DIR/lib/descr
 git clone https://github.com/alexstanciu-1/dp-engine.git "$INSTALL_DIR/lib/dp-engine"
 
 cd "$INSTALL_DIR/vm/vagrant" && vagrant provision
+cd "$INSTALL_DIR/vm/vagrant" && vagrant halt
 cd "$INSTALL_DIR/vm/vagrant" && vagrant up
