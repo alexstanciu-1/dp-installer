@@ -129,7 +129,7 @@ echo shell_exec('systemctl restart php8.4-fpm');
 # echo shell_exec("rsync -a --chmod=750 --chown={$User}:www-data /desc_prog/ /home/desc_prog/");
 # echo shell_exec("find /home/desc_prog -type f -exec chmod 640 {} +");
 
-echo shell_exec("rsync -a --chmod=750 --chown=root:www-data /desc_prog/vm/provision/server/public_html/ /_provision/public_html");
+echo shell_exec("rsync -a --chmod=750 --chown=root:www-data /desc_prog/installer/provision/server/public_html/ /_provision/public_html");
 # echo shell_exec("find /_provision -type f -exec chmod 640 {} +");
 
 # Alias /phpmyadmin /usr/share/phpmyadmin
