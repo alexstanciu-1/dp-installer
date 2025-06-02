@@ -22,6 +22,6 @@ git clone https://github.com/alexstanciu-1/dp-engine.git "$INSTALL_DIR/lib/dp-en
 
 cd "$INSTALL_DIR/installer/vagrant" && vagrant up --provision
 
-# SHOULD WE DO A RESTART
-# cd "$INSTALL_DIR/installer/vagrant" && vagrant halt
-# cd "$INSTALL_DIR/installer/vagrant" && vagrant up
+# SHOULD WE DO A RESTART ?!, yes, we update the kernel
+cd "$INSTALL_DIR/installer/vagrant" && vagrant halt
+cd "$INSTALL_DIR/installer/vagrant" && vagrant up

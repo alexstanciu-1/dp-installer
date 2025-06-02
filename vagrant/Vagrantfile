@@ -64,13 +64,14 @@ Vagrant.configure("2") do |cfg|
 	  config.vm.synced_folder "../..", "/desc_prog"
 	  config.vm.synced_folder "../..", "/home/desc_prog/apps", type: "rsync"
 
-	  config.trigger.after [:up, :reload] do |t|
-		t.info = "rsync auto"
-		# t.run = {inline: "vagrant rsync-auto bork"}
-		# If you want it running in the background switch these
-		# t.run = {inline: "bash -c 'vagrant rsync-auto bork &'"}
-		t.run = {inline: "bash -c 'vagrant rsync-auto &'"}
-	  end
+      config.trigger.after [:up, :reload] do |t|
+        t.info = "rsync auto"
+        #if OS.windows?
+		#  t.run = {inline: "mintty bash -mc 'vagrant rsync-auto  &>/dev/null < /dev/null &'"}
+        #else
+        #  t.run = {inline: "bash -c 'vagrant rsync-auto  &>/dev/null < /dev/null & disown'"}
+	    #end
+      end
 
 	  # Provider-specific configuration so you can fine-tune various
 	  # backing providers for Vagrant. These expose provider-specific options.
@@ -117,8 +118,25 @@ Vagrant.configure("2") do |cfg|
 		 a2disconf php8.3-fpm
 		 a2enconf php8.3-fpm
 		 systemctl reload apache2
-		 php /desc_prog/vm/provision/provision.php
+		 php /desc_prog/installer/provision/provision.php
 	  SHELL
   end
 end
 
+module OS
+    def OS.windows?
+        (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+    end
+
+    def OS.mac?
+        (/darwin/ =~ RUBY_PLATFORM) != nil
+    end
+
+    def OS.unix?
+        !OS.windows?
+    end
+
+    def OS.linux?
+        OS.unix? and not OS.mac?
+    end
+end
